@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lead Tracker CRM</title>
+</head>
+
+<body>
+
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <span class="logo-mark" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CRM logo">
+                        <rect x="6" y="22" width="8" height="16" rx="2" fill="#60a5fa" />
+                        <rect x="18" y="16" width="8" height="22" rx="2" fill="#38bdf8" />
+                        <rect x="30" y="10" width="8" height="28" rx="2" fill="#2563eb" />
+                    </svg>
+                </span>
+                <span>CRM</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-text">Leads</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span class="nav-text">Analytics</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Settings</span>
+            </a>
+        </nav>
+    </aside>
+
+    
+    <div class="app-container">
+
+        
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <h1>Dashboard</h1>
+            </div>
+            <div class="top-bar-center">
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" placeholder="Search leads..." class="search-input">
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <button class="btn-add-lead" id="addLeadBtn">+ Add new lead</button>
+                <div class="profile-icon">👤</div>
+            </div>
+        </header>
+
+        
+        <main class="main-content">
+
+            
+            <section class="stats-container">
+                <div class="stat-card">
+                    <h3 id="total-leads">0</h3>
+                    <p>Total leads</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="qualified-leads">0</h3>
+                    <p>Qualified</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="in-discussion-leads">0</h3>
+                    <p>In discussion</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="closed-won-leads">0</h3>
+                    <p>Closed won</p>
+                </div>
+            </section>
+
+            
+            <section class="leads-section">
+                <div class="leads-header">
+                    <h2>All leads</h2>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Company</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    
+    <div class="modal" id="formModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add new lead</h2>
+                <button class="modal-close" id="modalCloseBtn">✕</button>
+            </div>
+            <form class="form-container">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="client-name">Name</label>
+                        <input type="text" id="client-name" placeholder="Enter name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-email">Email address</label>
+                        <input type="email" id="client-email" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company-name">Company name</label>
+                        <input type="text" id="company-name" placeholder="Enter company" required>
+                    </div>
+                    <div class="form-group select-group">
+                        <label for="status">Lead status</label>
+                        <select id="status">
+                            <option value="new">New Lead</option>
+                            <option value="contacted">Contacted</option>
+                            <option value="qualified">Qualified</option>
+                            <option value="in-discussion">In Discussion</option>
+                            <option value="proposal-sent">Proposal Sent</option>
+                            <option value="negotiation">Negotiation</option>
+                            <option value="closed-won">Closed Won</option>
+                            <option value="closed-lost">Closed Lost</option>
+                            <option value="on-hold">On Hold</option>
+                            <option value="disqualified">Disqualified</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit" id="saveButton">Save lead</button>
+                    <button class="btn btn-secondary" type="button" id="cancelEdit" hidden>Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
